@@ -1,1 +1,0 @@
-The spider I made was created using my Scrapy configurations from the project I am working with. This is why it won't run in other environments as long as it doesn't have the configurations and the settings on my laptop. This is the reason I attached a print screen showing that the spider is working as it should. If necessary, I am available for a screen sharing as a proof.
