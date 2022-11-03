@@ -1,0 +1,27 @@
+# -- coding: utf-8 --
+
+import numpy as np
+import pandas as pd
+
+# Import all 4 CSV
+
+df_airlines = pd.read_csv("airlines.csv", error_bad_lines=False, encoding='utf-8')
+df_airports = pd.read_csv("airports.csv", error_bad_lines=False, encoding='utf-8')
+df_flights = pd.read_csv("flights.csv", error_bad_lines=False, encoding='utf-8')
+df_weather = pd.read_csv("weather.csv", error_bad_lines=False, encoding='utf-8')
+
+df = pd.merge(df_flights, df_airlines, on = ['carrier'], how='inner')
+
+df_ex_1 = df[['arr_time', 'origin', 'dest', 'name']]
+
+display(df_ex_1)
+
+df_ex_2 = df_ex_1[df_ex_1.name.str.contains('JetBlue')]
+
+display(df_ex_2)
+
+df_ex_3 = df[['flight', 'origin']].groupby('origin').sum().sort_values(by=['origin'])
+display(df_ex_3)
+
+df_ex_4 = df_ex_3[df_ex_3.flight > 10000]
+display(df_ex_4)
