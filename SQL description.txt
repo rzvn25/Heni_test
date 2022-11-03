@@ -1,0 +1,7 @@
+1. Inner Join combins records from two tables when there are matching values in a common field. That way, it creates a new table by combining rows that have matching values in at least two tables.
+
+Left Join returns all the records from the first table (the left one) and the matched records from the second table (the right one). When there is nothing to match for a specific record, there is a "NULL" in the corresponding column of the second table.
+
+Right Join is similar to left join in the idea it returns all the rows of the table on the right side of the join and matching rows for the table on the left side of it. Same as for Left Join, there is a "NULL" in the corresponding column of the left table is there is nothing to match.
+
+Full Join combines the results of both left and right outer joins. The resulting table will contain all the recors from both the tables and if there are missing mateches it will appear "NULL".
